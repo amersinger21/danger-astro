@@ -1,0 +1,87 @@
+---
+export interface Props {
+  sectionName: string;
+}
+
+const { sectionName } = Astro.props;
+const lowerCaseSectionNAme = sectionName.toLowerCase().replace(" ", "-");
+---
+
+<div class="marquee">
+  <h2 class="marquee-text" id={lowerCaseSectionNAme}>{sectionName}</h2>
+</div>
+
+<style>
+  .marquee {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--marquee-color);
+    border-top: 1px solid var(--marquee-color);
+    border-bottom: 1px solid var(--marquee-color);
+    padding: var(--padding-sml);
+    margin-block: var(--padding-std);
+    width: 100%;
+  }
+
+  .marquee-text {
+    animation: Slide linear 10s infinite;
+  }
+
+  .marquee-text::before,
+  .marquee-text::after {
+    content: "*";
+    display: inline-block;
+  }
+
+  @keyframes Slide {
+    0% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(calc(-0.7 * var(--padding-lg)));
+    }
+    75% {
+      transform: translateX(calc(0.7 * var(--padding-lg)));
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  .marquee-text#film {
+    animation-delay: 1.6s;
+  }
+
+  .marquee-text#press {
+    animation-delay: 1s;
+  }
+  .marquee-text#movies {
+    animation-delay: 40ms;
+  }
+
+  .marquee-text#music-videos {
+    animation-delay: 230ms;
+  }
+
+  .marquee-text#writing {
+    animation-delay: 100ms;
+  }
+
+  @media (min-width: 700px) {
+    @keyframes Slide {
+      0% {
+        transform: translateX(0);
+      }
+      25% {
+        transform: translateX(-10em);
+      }
+      75% {
+        transform: translateX(10em);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+  }
+</style>

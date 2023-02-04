@@ -1,0 +1,61 @@
+---
+import flag from "../images/flag1a.gif";
+---
+
+<header>
+  <div id="top-line"></div>
+  <div class="header-wrapper">
+    <img
+      src={flag}
+      alt="GIF of a pixel art American flag waving"
+      class="am-flag"
+    />
+    <h1 id="site-name">
+      <a href="/" rel="norefferer noopener">Matthew Danger Lippman</a>
+    </h1>
+    <img
+      src={flag}
+      alt="GIF of a pixel art American flag waving"
+      class="am-flag"
+    />
+  </div>
+  <p class="short-bio">
+    Welcome to the official website of Matthew Danger Lippman, musician, actor,
+    & writer living in Brooklyn. Go Bills!
+  </p>
+</header>
+
+<style>
+  h1 {
+    font-family: var(--header-font);
+    font-size: var(--font-size-500);
+  }
+
+  h1 > a {
+    color: var(--main-text-color);
+  }
+
+  .short-bio {
+    font-family: var(--main-font);
+    font-size: var(--font-size-75);
+    color: var(--main-text-color);
+    padding: var(--padding-sml);
+  }
+
+  .header-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3.5em;
+    margin: var(--padding-std);
+  }
+
+  h1::before,
+  h1::after,
+  p::before,
+  p::after {
+    content: "~";
+    display: inline-block;
+    color: var(--main-text-color);
+  }
+</style>

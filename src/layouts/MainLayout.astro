@@ -1,0 +1,45 @@
+---
+import ContentBox from "../components/ContentBox.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import Nav from "../components/Nav.astro";
+import "../styles/global.css";
+
+export interface Props {
+  title?: string;
+}
+
+const { title = "MATTHEW DANGER LIPPMAN: CULT ICON. AMERICAN HERO" } =
+  Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta
+      name="description"
+      content="Welcome to the official website of Matthew Danger Lippman, musician, actor, & writer living in Brooklyn. Go Bills!"
+    />
+    <meta
+      property="og:image"
+      content="https://amersinger21.github.io/danger-test/images/MDLsmall.jpeg"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="htps://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,600&family=Poppins:wght@400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <Header />
+    <Nav />
+    <ContentBox />
+    <Footer />
+  </body>
+</html>
+
+<style></style>

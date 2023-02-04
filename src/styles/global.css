@@ -1,0 +1,209 @@
+:root {
+    --main-text-color: hsl(1, 100%, 41%);
+    --body-text-color: hsla(240, 67%, 35%, 0.967);
+    --marquee-color: hsl(120, 87%, 36%);
+    --background-color: hsla(52, 46%, 87%, 0.942);
+    --padding-lg: 2em;
+    --padding-std: 1em;
+    --padding-sml: 0.25rem;
+    --font-size-500: 3rem;
+    --font-size-400: 2rem;
+    --font-size-300: 1.5rem;
+    --font-size-200: 1.25rem;
+    --font-size-100: 1rem;
+    --font-size-75: .9rem;
+    --font-size-50: 0.8rem;
+    --header-font: "Playfair Display", serif;
+    --main-font: "Poppins", sans-serif;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+
+  }
+  
+  body {
+    background-image: url(../images/smokeybackground.jpg);
+    height: 100vh;
+    height: 100dvh;
+    overflow-x: hidden;
+    text-align: center;
+    margin-inline: .5rem;
+  }
+  
+  a {
+    color: white;
+  }
+  
+  img {
+    max-width: 100%;
+  }
+  
+  .main-wrapper {
+    width: clamp(20rem, 95%, 90rem);
+    margin: 0 auto;
+  }
+  
+  main {
+    color: var(--body-text-color);
+    background-color: var(--background-color);
+    border: 5px solid var(--body-text-color);
+    padding: var(--padding-std);
+    margin: 0 1rem;
+  }
+  
+  .inner-wrapper {
+    border: 5px solid var(--main-text-color);
+    padding: var(--padding-lg);
+  }
+  
+  .hero-images-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--padding-sml);
+    column-gap: 0.25em;
+    margin: 0.25em;
+  }
+  
+  .section-image > img {
+    width: 60px;
+  }
+  
+  .content-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: var(--padding-sml);
+  }
+  
+  .content-item > * {
+    color: var(--body-text-color);
+  }
+  
+  .content-item > a::after {
+    content: "~";
+    display: block;
+  }
+  
+  
+  #top-line {
+    background-color: var(--main-text-color);
+    height: 25px;
+    font-size: var(--font-size-50);
+  }
+  
+  .cart-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    max-width: 850px;
+    padding-right: var(--padding-sml);
+    padding-top: 5px;
+  }
+  
+  .thank-you-text {
+    color: var(--main-text-color);
+    font-size: clamp(0.6rem, 1em, 2em);
+    margin-block: var(--padding-std);
+    white-space: break-space;
+  }
+  
+  footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2em;
+    min-width: 100%;
+    margin-top: 1.5em;
+    background-color: var(--body-text-color);
+    font-size: var(--font-size-50);
+  }
+  
+  #email-main-wrapper {
+    min-height: 90vh;
+  }
+  
+  .contact-me-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--padding-std);
+  }
+  
+  form {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    font-weight: bold;
+  }
+  
+  input,
+  textarea,
+  #submit-btn {
+    width: 100%;
+    border-radius: 6px;
+    padding: var(--padding-std);
+    border: 1px solid var(--body-text-color);
+  }
+  
+  input,
+  textarea {
+    background-color: hsla(0, 0%, 100%, 0.906);
+    margin-bottom: var(--padding-std);
+  }
+  
+  #submit-btn {
+    background-color: var(--body-text-color);
+    color: white;
+    font-weight: bold;
+    font-size: var(--font-size-200);
+    margin-bottom: var(--padding-lg);
+    max-width: clamp(10rem, 100%, 400px);
+    align-self: flex-end;
+    cursor: pointer;
+  }
+  
+  .contact-me-wrapper {
+    margin-bottom: var(--padding-lg);
+  }
+  
+  @media (min-width: 700px) {
+  
+    .email-content-wrapper {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      gap: 2em;
+    }
+  
+    #headshot {
+      max-width: 55%;
+    }
+  
+    #email-main-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 85%;
+    }
+  
+    form {
+      padding-top: 5%;
+    }
+  
+    main {
+      width: 100%;
+    }
+  
+    #submit-btn {
+      max-width: clamp(10rem, 100%, 200px);
+    }
+  }
