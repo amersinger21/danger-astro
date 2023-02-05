@@ -1,84 +1,77 @@
 ---
+import menuIcon from "../images/menu-icon.svg";
 ---
 
 <nav>
-  <div class="main-nav">
-    <ul>
-      <li class="nav-link">
-        <a
-          href="https://matthewdangerlippman.bandcamp.com/album/touchdown-u-s-a"
-          target="_blank"
-          rel="nnoreferrer noopener">BANDCAMP</a
-        >
-      </li>
-      <li class="nav-link">
-        <a
-          href="https://www.instagram.com/matthewdangerlippman/"
-          target="_blank"
-          rel="nnoreferrer noopener">INSTAGRAM</a
-        >
-      </li>
-      <li class="nav-link">
-        <a href="/email" target="_blank" rel="nnoreferrer noopener">EMAIL</a>
-      </li>
-    </ul>
-  </div>
+  <ul>
+    <li class="nav-link">
+      <a
+        href="https://matthewdangerlippman.bandcamp.com/album/touchdown-u-s-a"
+        target="_blank"
+        rel="nnoreferrer noopener">Bandcamp</a
+      >
+    </li>
+    <li class="nav-link">
+      <a
+        href="https://www.instagram.com/matthewdangerlippman/"
+        target="_blank"
+        rel="nnoreferrer noopener">Instagram</a
+      >
+    </li>
+    <li class="nav-link">
+      <a href="/email" target="_blank" rel="nnoreferrer noopener">Email</a>
+    </li>
+  </ul>
   <button id="nav-display-btn">
-    <svg
-      aria-hidden="true"
-      width="40px"
-      height="40px"
-      viewBox="0 0 32 32"
-      enable-background="new 0 0 32 32"
-      version="1.1"
-      xml:space="preserve"
-      xmlns="http://www.w3.org/2000/svg"
-      xmlns:xlink="http://www.w3.org/1999/xlink"
-    >
-      <path
-        d="M26,16c0,1.104-0.896,2-2,2H8c-1.104,0-2-0.896-2-2s0.896-2,2-2h16C25.104,14,26,14.896,26,16z"
-        id="XMLID_314_"></path>
-      <path
-        d="M26,8c0,1.104-0.896,2-2,2H8c-1.104,0-2-0.896-2-2s0.896-2,2-2h16C25.104,6,26,6.896,26,8z"
-        id="XMLID_315_"></path>
-      <path
-        d="M26,24c0,1.104-0.896,2-2,2H8c-1.104,0-2-0.896-2-2s0.896-2,2-2h16C25.104,22,26,22.896,26,24z"
-        id="XMLID_316_"></path>
-    </svg>
+    <img src={menuIcon} alt=" " />
   </button>
 </nav>
 
 <style>
   nav {
     background-color: var(--main-text-color);
-    min-height: 46px;
-    margin: var(--padding-std) 0;
+    opacity: 0.9;
+    min-height: 50px;
+    font-family: var(--head-font);
+    margin-block: var(--padding-std);
     position: sticky;
     top: 0;
     z-index: 1;
+    border-bottom: 1px solid #rgba(51, 51, 51, 0.263);
   }
-  .main-nav li {
+
+  nav ul {
+    background-color: transparent;
+  }
+  nav li {
     padding: var(--padding-std);
+    text-transform: uppercase;
+  }
+
+  a {
+    color: #fff;
   }
 
   #nav-display-btn {
     position: absolute;
-    border: none;
     right: 0;
-    top: 2px;
-    background-color: var(--main-text-color);
-  }
-
-  .main-nav > * {
-    background-color: rgb(186, 31, 31);
+    top: 0;
+    background-color: transparent;
+    border: 3px solid #efefefe8;
+    width: 47px;
+    padding: var(--padding-std);
   }
 
   .nav-link {
     display: none;
   }
 
-  .main-nav li:hover {
-    background-color: #333;
+  nav li:hover {
+    background-color: rgba(51, 51, 51, 0.263);
+  }
+
+  .show {
+    display: block;
   }
 
   @media (min-width: 700px) {
@@ -86,15 +79,52 @@
       display: none;
     }
 
-    .main-nav,
+    nav {
+      display: flex;
+      justify-content: center;
+    }
+
+    nav ul {
+      display: flex;
+      align-items: center;
+    }
+
     .nav-link {
       display: block;
       background-color: var(--main-text-color);
     }
-
-    .main-nav {
-      display: flex;
-      justify-content: center;
-    }
   }
 </style>
+
+<script>
+  const toggleNavBtn = document.getElementById("nav-display-btn");
+  const navLinks = document.querySelectorAll(".nav-link");
+
+  function ToggleNav() {
+    navLinks.forEach((item) => {
+      item.classList.toggle("show");
+    });
+  }
+
+  // function SendEmail() {
+  //   document.getElementById("email-form").action = "";
+
+  //   if (!document.getElementById("name").value.length > 0) {
+  //     return;
+  //   }
+
+  //   if (!document.getElementById("msg").value.length > 0) {
+  //     return;
+  //   } else {
+  //     window.location.href =
+  //       "mailto:matthewdangerlippman@gmail.com?subject=New%20Contact%20From%20" +
+  //       document.getElementById("name").value +
+  //       "&body=" +
+  //       document.getElementById("msg").value;
+
+  //     window.location.reload();
+  //   }
+  // }
+
+  toggleNavBtn.addEventListener("click", ToggleNav);
+</script>

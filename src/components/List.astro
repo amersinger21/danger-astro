@@ -1,0 +1,26 @@
+---
+export interface Props {
+  title: string;
+  link: string;
+  year: string;
+}
+
+const { title, link, year } = Astro.props;
+---
+
+<li class="content-item">
+  <a href={link} target="_blank" rel="noreferrer noopener">{title} [{year}]</a>
+</li>
+
+<style>
+  .content-item > * {
+    color: var(--body-text-color);
+    font-family: var(--main-font);
+    font-size: var(--font-size-75);
+  }
+
+  .content-item > a::after {
+    content: "~";
+    display: block;
+  }
+</style>

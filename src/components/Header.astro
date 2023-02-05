@@ -29,6 +29,7 @@ import flag from "../images/flag1a.gif";
   h1 {
     font-family: var(--header-font);
     font-size: var(--font-size-500);
+    line-height: 1.2;
   }
 
   h1 > a {
@@ -50,6 +51,11 @@ import flag from "../images/flag1a.gif";
     margin: var(--padding-std);
   }
 
+  #top-line {
+    min-height: var(--padding-std);
+    background-color: var(--main-text-color);
+  }
+
   h1::before,
   h1::after,
   p::before,
@@ -57,5 +63,16 @@ import flag from "../images/flag1a.gif";
     content: "~";
     display: inline-block;
     color: var(--main-text-color);
+  }
+
+  @media (max-width: 700px) {
+    h1::before,
+    h1::after {
+      display: block;
+    }
+
+    .header-wrapper {
+      margin-block: var(--padding-sml);
+    }
   }
 </style>

@@ -1,0 +1,356 @@
+---
+import Marquee from "../components/Marquee.astro";
+import cdGif from "../images/cd.gif";
+import List from "./List.astro";
+
+const list = await Astro.glob("../music/*.md");
+const musicList = [
+  {
+    title: 'Scout Gillett - "one to ten" EP (guitar)',
+    link: "https://scoutgillettmusic.bandcamp.com/album/one-to-ten",
+    year: "2022",
+  },
+  {
+    title:
+      '"Everybody Cares, Everybody Understands: A Tribute to Elliott Smith" ("The White Lady Loves You More")',
+    link: "https://eceu.bandcamp.com/album/everybody-cares-everybody-understands-a-tribute-to-elliott-smith",
+    year: "2022",
+  },
+  {
+    title: '"Touchdown U.S.A." EP',
+    link: "https://matthewdangerlippman.bandcamp.com/album/touchdown-u-s-a",
+    year: "2021",
+  },
+  {
+    title: '"Sadomania" EP',
+    link: "https://matthewdangerlippman.bandcamp.com/album/sadomania",
+    year: "2019",
+  },
+  {
+    title:
+      '"You Can Sing Me Anything: A Tribute to the Magnetic Fields\' 69 LOVE SONGS" ("No One Will Ever Love You")',
+    link: "https://livingstatuerecords.bandcamp.com/album/you-can-sing-me-anything-a-tribute-to-69-love-songs",
+    year: "2018",
+  },
+  {
+    title: '"ILL."',
+    link: "https://matthewdangerlippman.bandcamp.com/album/ill",
+    year: "2018",
+  },
+  {
+    title:
+      'Hah. - "all your bad habits talk behind your back" (guitar, vocals, add. production)',
+    link: "https://hahperiod.bandcamp.com/album/all-your-bad-habits-talk-behind-your-back",
+    year: "2017",
+  },
+  {
+    title: '"REFRESH 2 DEATH" EP',
+    link: "https://matthewdangerlippman.bandcamp.com/album/refresh-2-death-ep",
+    year: "2017",
+  },
+  {
+    title:
+      'Brimstone Blondes - "First Impressions Are Everything / Touchdown U.S.A."',
+    link: "https://brimstoneblondes.bandcamp.com/album/first-impressions-are-everything-touchdown-u-s-a",
+    year: "2016",
+  },
+  {
+    title: 'Dangerlips - "HOOKED"',
+    link: "https://lipsrecords.bandcamp.com/album/dangerlips-hooked",
+    year: "2016",
+  },
+  {
+    title: 'Brimstone Blondes - "AGE OF CONSENT"',
+    link: "https://brimstoneblondes.bandcamp.com/album/age-of-consent",
+    year: "2014",
+  },
+  {
+    title: 'Brimstone Blondes - "When We Were Blonde" EP',
+    link: "https://brimstoneblondes.bandcamp.com/album/when-we-were-blonde-ep",
+    year: "2013",
+  },
+  {
+    title: '"Misadventures" (OUT OF PRINT)',
+    link: "/",
+    year: "2011",
+  },
+];
+const shortList = list.reverse().slice(0, 7);
+---
+
+<article class="content-section">
+  <div class="section-image">
+    <img src={cdGif} alt="GIF of a CD spinning" />
+  </div>
+  <ul>
+    {
+      shortList.map((item) => (
+        <List
+          title={item.frontmatter.title}
+          link={item.frontmatter.link}
+          year={item.frontmatter.year}
+        />
+      ))
+    }
+  </ul>
+  <a href={`/music`}>See More</a>
+</article>
+
+<Marquee sectionName="Music Videos" />
+<article class="content-section">
+  <div class="section-image">
+    <img src="./images/videocameraturnhgclrue1.gif" alt="Film Camera" />
+  </div>
+  <ul class="content-list">
+    <li class="content-item">
+      <a
+        href="https://www.instagram.com/p/CjbPADmjws0/?hl=en"
+        target="_blank"
+        rel="noreferrer noopener"
+        >"The White Lady Loves You More" (directed by MDL) [2022]
+      </a>
+    </li>
+    <li class="content-item">
+      <a
+        href="https://www.youtube.com/watch?v=BzKnp5zI6Lk"
+        target="_blank"
+        rel="noreferrer noopener"
+        >Scout Gillett - "slow dancin'" (directed by MDL & Jordan Tetewsky)
+        [2022]</a
+      >
+    </li>
+    <li class="content-item">
+      <a
+        href="https://www.youtube.com/watch?v=YY99m6_jHcI"
+        target="_blank"
+        rel="noreferrer noopener"
+        >"Suburban Girlfriend" (directed by MDL & Jacob Smolinski) [2021]</a
+      >
+    </li>
+    <li class="content-item">
+      <a
+        href="https://www.youtube.com/watch?v=q4Ctgq8HCP8"
+        target="_blank"
+        rel="noreferrer noopener"
+        >"Things Don't Break My Heart Like They Used To" (directed by James
+        Werick) [2020]</a
+      >
+    </li>
+    <li class="content-item">
+      <a
+        href="https://www.youtube.com/watch?v=JHSqbJ2qlbw"
+        target="_blank"
+        rel="noreferrer noopener">"X2" (directed by James Werick) [2018]</a
+      >
+    </li>
+    <li class="content-item">
+      <a
+        href="https://www.youtube.com/watch?v=DnsjDINQqnY"
+        target="_blank"
+        rel="noreferrer noopener"
+        >"F*ckin Pink" (directed by MDL & James Werick) [2017]</a
+      >
+    </li>
+    <li class="content-item">
+      <a
+        href="https://youtu.be/ltAJrkEvB6c"
+        target="_blank"
+        rel="noreferrer noopener">"ETA" (directed by Jacob Smolinski) [2017]</a
+      >
+    </li>
+    <li class="content-item">
+      <a
+        href="https://www.youtube.com/watch?v=hACIe3N8Es4"
+        target="_blank"
+        rel="noreferrer noopener"
+        >"Do U Wanna Make-Out??" (directed by MDL & James Werick) [2015]</a
+      >
+    </li>
+  </ul>
+</article>
+<Marquee sectionName="Film" />
+<article class="content-section">
+  <div class="section-image">
+    <img src="./images/clapper2.gif" alt="Clapper" />
+  </div>
+  <ul class="content-list">
+    <li class="content-item">
+      <a
+        href="https://vimeo.com/661789889/60e3b13935"
+        target="_blank"
+        rel="noreferrer noopener"
+        >Ain't No Cure For Love: America (directed by Matthew Danger Lippman)
+        (short film) [2022]</a
+      >
+    </li>
+    <li class="content-item">
+      <a
+        href="https://www.youtube.com/watch?v=3zTTx2p35ZY"
+        target="_blank"
+        rel="noreferrer noopener"
+        >THE HARD TIMES: Too Many Fred Dursts (directed by Paul Lewis Anderson)
+        (comedy sketch) [2022]</a
+      >
+    </li>
+    <li class="content-item">
+      <a
+        href="https://www.youtube.com/watch?v=S01XCoaDgkM"
+        target="_blank"
+        rel="noreferrer noopener"
+        >Samantha Rose (directed by Andrew Morgan) (feature film) [2021]</a
+      >
+    </li>
+    <li class="content-item">
+      <a
+        href="https://youtu.be/2kgl1WTz11k"
+        target="_blank"
+        rel="noreferrer noopener"
+        >WASTE INDUSTRY: Up the Budget (performance video) (WARNING: contains
+        graphic nudity) [2020]</a
+      >
+    </li>
+  </ul>
+</article>
+<Marquee sectionName="Writing" />
+<article class="content-section">
+  <div class="section-image">
+    <img src="./images/writingpen.gif" alt="Pen Writing" />
+  </div>
+  <ul class="content-list">
+    <li class="content-item">
+      <a
+        href="https://thefilmstage.com/face-the-truth-eiko-ishibashi-on-the-music-of-drive-my-car/"
+        target="_blank"
+        rel="noreferrer noopener"
+        >Face The Truth: Eiko Ishibashi on the Music of Drive My Car
+      </a>
+    </li>
+    <li class="content-item">
+      <a
+        href="https://thefilmstage.com/sincerity-spite-a-conversation-with-the-directors-star-of-hannah-ha-ha/"
+        target="_blank"
+        rel="noreferrer noopener"
+        >Sincerity and Spite: A Conversation with the Directors & Star of Hannah
+        Ha Ha</a
+      >
+    </li>
+    <li class="content-item">
+      <a
+        href="https://thefilmstage.com/caleb-landry-jones-talks-christian-rock-80s-music-eggo-waffles-his-new-album/"
+        target="_blank"
+        rel="noreferrer noopener"
+        >Caleb Landry Jones Talks Christian Rock, '80s Music, Eggo Waffles, &
+        His New Album</a
+      >
+    </li>
+    <li class="content-item">
+      <a
+        href="https://thefilmstage.com/tom-green-reflects-on-20-years-of-freddy-got-fingered/"
+        target="_blank"
+        rel="noreferrer noopener"
+        >Tom Green reflects on 20 years of Freddy Got Fingered</a
+      >
+    </li>
+    <li class="content-item">
+      <a
+        href="https://thefilmstage.com/pvt-chat-director-ben-hozie-on-a-raw-approach-to-filming-sex-male-nudity-as-art-and-the-poetry-of-masturbation/"
+        target="_blank"
+        rel="noreferrer noopener"
+        >PVT Chat director Ben Hozie on a raw approach to filming sex, male
+        nudity as art, & the poetry of masturbation</a
+      >
+    </li>
+  </ul>
+</article>
+<Marquee sectionName="Press" />
+<article class="content-section">
+  <div class="section-image">
+    <img src="./images/news.gif" alt="Newspaper" />
+  </div>
+  <ul class="content-list">
+    <li class="content-item">
+      <a
+        href="https://www.listennotes.com/de/podcasts/local-bops/004-matthew-danger-lippman-U_in4vClQBa/"
+        target="_blank"
+        rel="noreferrer noopener"
+        >Local Bops 004: Matthew Danger Lippman (performance and interview)
+        [2021]</a
+      >
+    </li>
+    <li class="content-item">
+      <a
+        href="https://www.audiofemme.com/premiere-matthew-danger-lippman-suburban-girlfriend/"
+        target="_blank"
+        rel="noreferrer noopener">Audiofemme interview [2021]</a
+      >
+    </li>
+    <li class="content-item">
+      <a
+        href="https://littlestarpr.com/writeups/matthew-danger-lippman-reunites-the-60s-with-the-90s-on-new-ep/"
+        target="_blank"
+        rel="noreferrer noopener"
+        >Matthew Danger Lippman reunites the 60s with the 90s on new EP (Little
+        Star PR interview) [2021]</a
+      >
+    </li>
+    <li class="content-item">
+      <a
+        href="https://anchor.fm/dumbtruthpod/episodes/Ep-5-Enter-the-Zohan-ft-Matthew-Danger-Lippman-e12k4n7"
+        target="_blank"
+        rel="noreferrer noopener"
+        >Dumb Truth Frequency Podcast "Enter the Zohan ft Matthew Danger
+        Lippman" [2021]</a
+      >
+    </li>
+    <li class="content-item">
+      <a
+        href="https://stereostickman.com/music/matthew-danger-lippman-touchdown-u-s-a-review-interview/"
+        target="_blank"
+        rel="noreferrer noopener">Stereo Stickman interview [2021]</a
+      >
+    </li>
+    <li class="content-item">
+      <a
+        href="https://bsidesbadlands.com/cgi-sys/suspendedpage.cgi"
+        target="_blank"
+        rel="noreferrer noopener"
+        >B-Sides & Badlands TOUCHDOWN U.S.A. review [2021]</a
+      >
+    </li>
+    <li class="content-item">
+      <a
+        href="https://www.listennotes.com/de/podcasts/bad-songwriter/matthew-danger-lippman-zI65uRfJeyr/"
+        target="_blank"
+        rel="noreferrer noopener">Bad Songwriter Podcast interview [2020]</a
+      >
+    </li>
+    <li class="content-item">
+      <a
+        href="https://www.listennotes.com/de/podcasts/local-fidelity/october-26th-2019-matthew-XS3Cn9_E5vz/"
+        target="_blank"
+        rel="noreferrer noopener"
+        >Local Fidelity / Look At My Records!: Matthew Danger Lippman Interview
+        [2019]</a
+      >
+    </li>
+    <li class="content-item">
+      <a
+        href="http://www.dailypublic.com/articles/12172014/spotlight-brimstone-blondes"
+        target="_blank"
+        rel="noreferrer noopener"
+        >The Daily Public - Spotlight: Brimstone Blondes (Interview with Matthew
+        Danger Lippman) [2014]</a
+      >
+    </li>
+  </ul>
+</article>
+
+<style>
+  .content-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: var(--padding-sml);
+  }
+</style>

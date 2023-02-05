@@ -4,6 +4,7 @@ import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import Nav from "../components/Nav.astro";
 import "../styles/global.css";
+// import "../scripts/main.jsx";
 
 export interface Props {
   title?: string;
@@ -35,11 +36,31 @@ const { title = "MATTHEW DANGER LIPPMAN: CULT ICON. AMERICAN HERO" } =
     />
   </head>
   <body>
-    <Header />
-    <Nav />
-    <ContentBox />
-    <Footer />
+    <div class="main-wrapper">
+      <Header />
+      <Nav />
+      <ContentBox>
+        <slot />
+      </ContentBox>
+      <Footer />
+    </div>
   </body>
 </html>
 
-<style></style>
+<style>
+  body {
+    background-image: url(../images/smokeybackground.jpg);
+    overflow-x: hidden;
+    text-align: center;
+  }
+
+  .main-wrapper {
+    width: clamp(20rem, 99%, 95rem);
+    margin-inline: auto;
+  }
+
+  Footer {
+    position: absolute;
+    bottom: 0;
+  }
+</style>
