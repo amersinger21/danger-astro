@@ -107,11 +107,11 @@ import heart from "../images/heart4.gif";
   function SendEmail() {
     document.getElementById("email-form").action = "";
 
-    if (!document.getElementById("name").value.length > 0) {
+    if (!(document.getElementById("name").value.length > 0)) {
       return;
     }
 
-    if (!document.getElementById("msg").value.length > 0) {
+    if (!(document.getElementById("msg").value.length > 0)) {
       return;
     } else {
       window.location.href =
