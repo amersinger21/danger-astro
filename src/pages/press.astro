@@ -1,0 +1,36 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Marquee from "../components/Marquee.astro";
+import ListItem from "../components/ListItem.astro";
+import newspaper from "../images/news.gif";
+
+const pressList = await Astro.glob("../content/press/*.md");
+---
+
+<MainLayout title="MDL - Press" pageName="MDL Press" heroVisible={false}>
+  <Marquee sectionName="Press" />
+  <article class="content-section">
+    <div class="section-image">
+      <img
+        src={newspaper}
+        alt="GIF of a movie camera switching between pointing at you and pointing away to the left"
+      />
+    </div>
+    <ul class="content-list">
+      {
+        pressList.reverse().map((item) => (
+          <>
+            <ListItem
+              title={item.frontmatter.title}
+              link={item.frontmatter.link}
+              year={item.frontmatter.year}
+            />
+          </>
+        ))
+      }
+    </ul>
+    <strong>
+      <a class="see-more" href="/#writing">Go Back</a>
+    </strong>
+  </article>
+</MainLayout>

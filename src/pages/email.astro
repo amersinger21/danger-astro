@@ -1,0 +1,128 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+
+import headShot from "../images/MDLsmall.jpeg";
+import heart from "../images/heart4.gif";
+---
+
+<MainLayout title="MDL - Contact Me" pageName="Contact Me" heroVisible={false}>
+  <div class="contact-me-wrapper">
+    <img src={heart} alt="GIF of a red heart spinning" />
+    <h2 class="contact-me">Contact Me</h2>
+    <img src={heart} alt="GIF of a red heart spinning" />
+  </div>
+  <div class="email-content-wrapper">
+    <form id="email-form" method="get" action="" onsubmit="return false">
+      <label for="name">Name</label>
+      <input id="name" type="text" name="name" placeholder="Name" required />
+      <label for="msg">Message</label>
+      <textarea
+        id="msg"
+        name="msg"
+        rows="6"
+        placeholder="Send a message"
+        required></textarea>
+      <input name="submit-button" type="submit" id="submit-btn" />
+    </form>
+    <img id="headshot" src={headShot} alt="MDL Headshot" />
+  </div>
+</MainLayout>
+
+<style>
+  form {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    font-weight: bold;
+  }
+
+  input,
+  textarea,
+  #submit-btn {
+    width: 100%;
+    border-radius: 6px;
+    padding: var(--padding-std);
+    border: 1px solid var(--body-text-color);
+  }
+
+  input,
+  textarea {
+    background-color: hsla(0, 0%, 100%, 0.906);
+    margin-bottom: var(--padding-std);
+  }
+
+  #submit-btn {
+    background-color: var(--body-text-color);
+    color: white;
+    font-weight: bold;
+    font-size: var(--font-size-200);
+    margin-bottom: var(--padding-lg);
+    max-width: clamp(10rem, 100%, 400px);
+    align-self: flex-end;
+    cursor: pointer;
+  }
+
+  .contact-me-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--padding-std);
+    margin-bottom: var(--padding-std);
+  }
+
+  h2 {
+    text-transform: uppercase;
+  }
+
+  @media (min-width: 700px) {
+    .email-content-wrapper {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      gap: 2em;
+    }
+
+    #headshot {
+      max-width: 55%;
+    }
+
+    #email-main-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 85%;
+    }
+
+    #submit-btn {
+      max-width: clamp(10rem, 100%, 200px);
+    }
+  }
+</style>
+
+<script>
+  const submitBtn = document.getElementById("submit-btn");
+
+  function SendEmail() {
+    document.getElementById("email-form").action = "";
+
+    if (!document.getElementById("name").value.length > 0) {
+      return;
+    }
+
+    if (!document.getElementById("msg").value.length > 0) {
+      return;
+    } else {
+      window.location.href =
+        "mailto:matthewdangerlippman@gmail.com?subject=New%20Contact%20From%20" +
+        document.getElementById("name").value +
+        "&body=" +
+        document.getElementById("msg").value;
+
+      window.location.reload();
+    }
+  }
+
+  submitBtn.addEventListener("click", SendEmail);
+</script>

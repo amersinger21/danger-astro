@@ -1,28 +1,157 @@
 ---
-import ContentSection from "../components/ContentSection.astro";
+// import ContentSection from "../components/ContentSection.astro";
 import Marquee from "../components/Marquee.astro";
 import MainLayout from "../layouts/MainLayout.astro";
-import heart from "../images/heart4.gif";
-import headShot from "../images/MDLsmall.jpeg";
+import ListItem from "../components/ListItem.astro";
+
 import guitarMan from "../images/guitarguy.gif";
+import cdGIF from "../images/cd.gif";
+import camera from "../images/videocameraturnhgclrue1.gif";
+import clapper from "../images/clapper2.gif";
+import pen from "../images/writingpen.gif";
+import newspaper from "../images/news.gif";
+
+const musicList = await Astro.glob("../content/music/*.md");
+const videoList = await Astro.glob("../content/music-videos/*.md");
+const filmList = await Astro.glob("../content/film/*.md");
+const writingList = await Astro.glob("../content/writing/*.md");
+const pressList = await Astro.glob("../content/press/*.md");
 ---
 
 <MainLayout>
-  <article class="hero">
-    <h2 id="official">~ Official Website of Matthew Danger Lippman ~</h2>
-    <div class="hero-images-wrapper">
-      <img src={heart} alt="GIF of a red heart spinning" />
-      <img src={headShot} alt="MDL Headshot" />
-      <img src={heart} alt="GIF of a red heart spinning" />
-    </div>
-    <p>~ MATTHEW DANGER LIPPMAN: CULT ICON. AMERICAN HERO. ~</p>
-  </article>
   <Marquee sectionName="Music" />
-  <ContentSection />
+  <article class="content-section">
+    <div class="section-image">
+      <img src={cdGIF} alt="GIF of a CD spinning" />
+    </div>
+    <ul class="content-list">
+      {
+        musicList
+          .reverse()
+          .slice(0, 5)
+          .map((item) => (
+            <>
+              <ListItem
+                title={item.frontmatter.title}
+                link={item.frontmatter.link}
+                year={item.frontmatter.year}
+              />
+            </>
+          ))
+      }
+    </ul>
+    <strong>
+      <a class="see-more" href="/music#music">See More</a>
+    </strong>
+  </article>
+  <Marquee sectionName="Music Videos" />
+  <article class="content-section">
+    <div class="section-image">
+      <img
+        src={camera}
+        alt="GIF of a movie camera switching between pointing at you and pointing away to the left"
+      />
+    </div>
+    <ul class="content-list">
+      {
+        videoList
+          .reverse()
+          .slice(0, 5)
+          .map((item) => (
+            <>
+              <ListItem
+                title={item.frontmatter.title}
+                link={item.frontmatter.link}
+                year={item.frontmatter.year}
+              />
+            </>
+          ))
+      }
+    </ul>
+    <strong>
+      <a class="see-more" href="/music-videos#music-videos">See More</a>
+    </strong>
+  </article>
+  <Marquee sectionName="Film" />
+  <article class="content-section">
+    <div class="section-image">
+      <img src={clapper} alt="GIF of a film clapper clapping" />
+    </div>
+    <ul class="content-list">
+      {
+        filmList
+          .reverse()
+          .slice(0, 5)
+          .map((item) => (
+            <>
+              <ListItem
+                title={item.frontmatter.title}
+                link={item.frontmatter.link}
+                year={item.frontmatter.year}
+              />
+            </>
+          ))
+      }
+    </ul>
+    <strong>
+      <a class="see-more" href="/film#film">See More</a>
+    </strong>
+  </article>
+  <Marquee sectionName="Writing" />
+  <article class="content-section">
+    <div class="section-image">
+      <img src={pen} alt="GIF of a fountiain pen writing scribbling" />
+    </div>
+    <ul class="content-list">
+      {
+        writingList
+          .reverse()
+          .slice(0, 5)
+          .map((item) => (
+            <>
+              <ListItem
+                title={item.frontmatter.title}
+                link={item.frontmatter.link}
+                year={item.frontmatter.year}
+              />
+            </>
+          ))
+      }
+    </ul>
+    <strong>
+      <a class="see-more" href="/writing#writing">See More</a>
+    </strong>
+  </article>
+  <Marquee sectionName="Press" />
+  <article class="content-section">
+    <div class="section-image">
+      <img
+        src={newspaper}
+        alt="GIF of a flipping through pages of a magazine"
+      />
+    </div>
+    <ul class="content-list">
+      {
+        pressList
+          .reverse()
+          .slice(0, 5)
+          .map((item) => (
+            <>
+              <ListItem
+                title={item.frontmatter.title}
+                link={item.frontmatter.link}
+                year={item.frontmatter.year}
+              />
+            </>
+          ))
+      }
+    </ul>
+    <strong>
+      <a class="see-more" href="/press#press">See More</a>
+    </strong>
+  </article>
   <article id="thank-you">
-    <h2 class="thank-you-text">
-      ~ Thank for visiting matthewdangerlippman.com ~
-    </h2>
+    <h2 class="thank-you-text">Thank for visiting matthewdangerlippman.com</h2>
     <img
       src={guitarMan}
       alt="Drawing of puppet in a blue sweater holding a guitar "
@@ -44,5 +173,26 @@ import guitarMan from "../images/guitarguy.gif";
   .hero p {
     font-family: var(--header-font);
     line-height: 1.5;
+  }
+
+  h2::before,
+  h2::after {
+    content: "~";
+    display: inline-block;
+  }
+
+  .content-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: var(--padding-sml);
+  }
+
+  .thank-you-text {
+    color: var(--main-text-color);
+    font-size: clamp(0.6rem, 1em, 2em);
+    margin-block: var(--padding-std);
+    white-space: break-space;
   }
 </style>

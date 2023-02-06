@@ -1,0 +1,34 @@
+---
+export interface Props {
+  endpoint: string;
+  text: string;
+}
+
+const { endpoint, text } = Astro.props;
+---
+
+<li class="nav-link">
+  <a href={endpoint} target="_blank" rel="nnoreferrer noopener">{text}</a>
+</li>
+
+<style>
+  li {
+    padding: calc(var(--padding-std) - 3px);
+    text-transform: uppercase;
+  }
+
+  li:hover {
+    background-color: rgba(51, 51, 51, 0.263);
+  }
+
+  a {
+    color: #fff;
+  }
+
+  @media (min-width: 700px) {
+    .nav-link {
+      display: block;
+      background-color: var(--main-text-color);
+    }
+  }
+</style>

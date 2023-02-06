@@ -1,73 +1,103 @@
 ---
-import menuIcon from "../images/menu-icon.svg";
+import NavItem from "./NavItem.astro";
+
+const navList = [
+  {
+    destination:"https://matthewdangerlippman.bandcamp.com/album/touchdown-u-s-a",
+    title: "Bandcamp"
+  },
+  {
+    destination:"https://www.instagram.com/matthewdangerlippman/",
+    title: "Instagram"
+  },
+  // {
+  //   destination:"/",
+  //   title: "Blog"
+  // },
+  {
+    destination:"/email",
+    title: "Email"
+  },
+
+]
 ---
 
 <nav>
-  <ul>
-    <li class="nav-link">
-      <a
-        href="https://matthewdangerlippman.bandcamp.com/album/touchdown-u-s-a"
-        target="_blank"
-        rel="nnoreferrer noopener">Bandcamp</a
-      >
-    </li>
-    <li class="nav-link">
-      <a
-        href="https://www.instagram.com/matthewdangerlippman/"
-        target="_blank"
-        rel="nnoreferrer noopener">Instagram</a
-      >
-    </li>
-    <li class="nav-link">
-      <a href="/email" target="_blank" rel="nnoreferrer noopener">Email</a>
-    </li>
+  <ul class="main-nav">
+    {navList.map(item => (
+      <NavItem endpoint={item.destination} text={item.title}/>
+    ))} 
   </ul>
-  <button id="nav-display-btn">
-    <img src={menuIcon} alt=" " />
+  <button
+    class="nav-display-btn"
+    aria-controls="primary navigation"
+    aria-expanded="false"
+  >
+    <svg class="menu-icon" viewBox="0 0 100 100" width="40">
+      <rect class="top line" width="70" height="10" x="15" y="25" rx="5"></rect>
+      <rect class="middle line" width="70" height="10" x="15" y="45" rx="5"
+      ></rect>
+      <rect class="bottom line" width="70" height="10" x="15" y="65" rx="5"
+      ></rect>
+    </svg>
   </button>
 </nav>
 
 <style>
+
   nav {
     background-color: var(--main-text-color);
     opacity: 0.9;
-    min-height: 50px;
+    min-height: 2.9rem;
     font-family: var(--head-font);
     margin-block: var(--padding-std);
     position: sticky;
     top: 0;
     z-index: 1;
-    border-bottom: 1px solid #rgba(51, 51, 51, 0.263);
+    box-sizing: content-box;
+    border-bottom: 1px solid rgba(51, 51, 51, 0.413);
   }
 
-  nav ul {
+  .main-nav {
     background-color: transparent;
-  }
-  nav li {
-    padding: var(--padding-std);
-    text-transform: uppercase;
+    display: none;
   }
 
-  a {
-    color: #fff;
-  }
-
-  #nav-display-btn {
+  .nav-display-btn {
     position: absolute;
     right: 0;
     top: 0;
     background-color: transparent;
     border: 3px solid #efefefe8;
-    width: 47px;
-    padding: var(--padding-std);
+    fill: #efefefe8;
+  }
+  svg{
+    margin-bottom:-3px;
   }
 
-  .nav-link {
-    display: none;
+  .nav-display-btn .line {
+    transition: y 200ms ease-in 200ms, rotate 200ms ease-in, opacity 0ms 200ms;
+    transform-origin: center;
   }
 
-  nav li:hover {
-    background-color: rgba(51, 51, 51, 0.263);
+  .nav-display-btn[aria-expanded="true"] .line {
+    transition: y 200ms ease-in, rotate 200ms ease-in 200ms, opacity 0ms 200ms;
+  }
+
+  .nav-display-btn[aria-expanded="true"] :is(.top, .bottom, .middle) {
+    y: 45;
+  }
+
+  .nav-display-btn[aria-expanded="true"] .top {
+    rotate: -45deg;
+  }
+
+  .nav-display-btn[aria-expanded="true"] .bottom {
+    rotate: 45deg;
+  }
+
+  .nav-display-btn[aria-expanded="true"] .middle {
+    opacity: 0; */
   }
 
   .show {
@@ -75,7 +105,7 @@ import menuIcon from "../images/menu-icon.svg";
   }
 
   @media (min-width: 700px) {
-    #nav-display-btn {
+    .nav-display-btn {
       display: none;
     }
 
@@ -88,22 +118,23 @@ import menuIcon from "../images/menu-icon.svg";
       display: flex;
       align-items: center;
     }
-
-    .nav-link {
-      display: block;
-      background-color: var(--main-text-color);
-    }
   }
 </style>
 
 <script>
-  const toggleNavBtn = document.getElementById("nav-display-btn");
-  const navLinks = document.querySelectorAll(".nav-link");
+  const toggleNavBtn = document.querySelector(".nav-display-btn");
+  const navLinks = document.querySelector(".main-nav");
 
   function ToggleNav() {
-    navLinks.forEach((item) => {
-      item.classList.toggle("show");
-    });
+    navLinks.classList.toggle("show");
+    let menuState = toggleNavBtn.getAttribute("aria-expanded");
+    if (menuState == "false") {
+      menuState = "true";
+    } else {
+      menuState = "false";
+    }
+
+    toggleNavBtn.setAttribute("aria-expanded", menuState);
   }
 
   // function SendEmail() {

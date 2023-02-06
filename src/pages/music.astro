@@ -1,0 +1,33 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Marquee from "../components/Marquee.astro";
+import ListItem from "../components/ListItem.astro";
+import cdGIF from "../images/cd.gif";
+
+const musicList = await Astro.glob("../content/music/*.md");
+---
+
+<MainLayout title="MDL - Music" pageName="MDL Music" heroVisible={false}>
+  <Marquee sectionName="Music" />
+  <article class="content-section">
+    <div class="section-image">
+      <img src={cdGIF} alt="GIF of a CD spinning" />
+    </div>
+    <ul class="content-list">
+      {
+        musicList.reverse().map((item) => (
+          <>
+            <ListItem
+              title={item.frontmatter.title}
+              link={item.frontmatter.link}
+              year={item.frontmatter.year}
+            />
+          </>
+        ))
+      }
+    </ul>
+    <strong>
+      <a class="see-more" href="/#music">Go Back</a>
+    </strong>
+  </article>
+</MainLayout>

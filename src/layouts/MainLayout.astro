@@ -3,15 +3,21 @@ import ContentBox from "../components/ContentBox.astro";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import Nav from "../components/Nav.astro";
+import heart from "../images/heart4.gif";
+import headShot from "../images/MDLsmall.jpeg";
 import "../styles/global.css";
-// import "../scripts/main.jsx";
 
 export interface Props {
   title?: string;
+  heroVisible?: boolean;
+  pageName?: string;
 }
 
-const { title = "MATTHEW DANGER LIPPMAN: CULT ICON. AMERICAN HERO" } =
-  Astro.props;
+const {
+  title = "MATTHEW DANGER LIPPMAN: CULT ICON. AMERICAN HERO.",
+  heroVisible = true,
+  pageName = "Official Website of Matthew Danger Lippman",
+} = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -40,6 +46,22 @@ const { title = "MATTHEW DANGER LIPPMAN: CULT ICON. AMERICAN HERO" } =
       <Header />
       <Nav />
       <ContentBox>
+        {
+          heroVisible && (
+            <>
+              <article class="hero">
+                <h2 id="official"> {pageName} </h2>
+                <div class="hero-images-wrapper">
+                  <img src={heart} alt="GIF of a red heart spinning" />
+                  <img src={headShot} alt="MDL Headshot" />
+                  <img src={heart} alt="GIF of a red heart spinning" />
+                </div>
+              </article>
+              <p> {title} </p>
+            </>
+          )
+        }
+
         <slot />
       </ContentBox>
       <Footer />
@@ -52,11 +74,35 @@ const { title = "MATTHEW DANGER LIPPMAN: CULT ICON. AMERICAN HERO" } =
     background-image: url(../images/smokeybackground.jpg);
     overflow-x: hidden;
     text-align: center;
+    padding-inline: var(--padding-sml);
   }
 
   .main-wrapper {
     width: clamp(20rem, 99%, 95rem);
     margin-inline: auto;
+  }
+
+  .hero-images-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--padding-sml);
+    column-gap: 0.125em;
+    margin: 0.5em;
+  }
+
+  h2,
+  .hero p {
+    font-family: var(--header-font);
+    line-height: 1.5;
+  }
+
+  h2::before,
+  h2::after,
+  p::before,
+  p::after {
+    content: "~";
+    display: inline-block;
   }
 
   Footer {
