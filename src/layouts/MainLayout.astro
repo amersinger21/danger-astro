@@ -70,11 +70,6 @@ const {
     </div>
   </body>
   <script is:inline>
-    declare global {
-      interface Window {
-        netlifyIdentity: any;
-      }
-    }
     if (window.netlifyIdentity) {
       window.netlifyIdentity.on("init", (user) => {
         if (!user) {
