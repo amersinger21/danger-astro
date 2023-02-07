@@ -1,4 +1,4 @@
-<script lang="ts">
+<script lang="js">
   import { onMount } from "svelte";
   onMount(() => {
     if (window.netlifyIdentity) {
