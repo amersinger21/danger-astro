@@ -12,6 +12,8 @@
     "database": "node server.js"
   },
   "dependencies": {
+    "@astrojs/svelte": "^2.0.1",
+    "add": "^2.0.6",
     "astro": "^2.0.6",
     "astro-netlify-cms": "^0.0.1",
     "svelte": "^3.55.1"
