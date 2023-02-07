@@ -40,6 +40,8 @@ const {
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,600&family=Poppins:wght@400&display=swap"
       rel="stylesheet"
     />
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"
+    ></script>
   </head>
   <body>
     <div class="main-wrapper">
@@ -67,6 +69,22 @@ const {
       <Footer />
     </div>
   </body>
+  <script>
+    declare global {
+      interface Window {
+        netlifyIdentity: any;
+      }
+    }
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", (user) => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
 </html>
 
 <style>
