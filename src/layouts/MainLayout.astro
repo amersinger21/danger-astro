@@ -114,6 +114,11 @@ const {
 </style>
 
 <script>
+  declare global {
+    interface Window {
+      netlifyIdentity: any;
+    }
+  }
   if (window.netlifyIdentity) {
     window.netlifyIdentity.on("init", (user) => {
       if (!user) {
