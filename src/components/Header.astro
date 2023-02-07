@@ -39,7 +39,7 @@ import flag from "../images/flag1a.gif";
   .short-bio {
     font-family: var(--main-font);
     font-size: var(--font-size-75);
-    color: var(--main-text-color);
+    color: var(--main-text-color-brighter);
     padding: var(--padding-sml);
   }
 
@@ -57,12 +57,17 @@ import flag from "../images/flag1a.gif";
   }
 
   h1::before,
-  h1::after,
+  h1::after {
+    content: "~";
+    display: inline-block;
+    color: var(--main-text-color);
+  }
+
   p::before,
   p::after {
     content: "~";
     display: inline-block;
-    color: var(--main-text-color);
+    color: var(--main-text-color-brighter);
   }
 
   @media (max-width: 700px) {
@@ -73,6 +78,10 @@ import flag from "../images/flag1a.gif";
 
     .header-wrapper {
       margin-block: var(--padding-sml);
+    }
+
+    h1 {
+      font-size: calc(var(--font-size-500) * 0.85);
     }
   }
 </style>

@@ -31,7 +31,7 @@ collections:
       - { label: "Slug", name: "slug", widget: "string" }
       - { label: "Item Number", name: "sortOrder", widget: "number" }
   - name: "film"
-    label: "Film"
+    label: "F`ilm"
     folder: "src/content/film"
     slug: "{{sortOrder}}-{{slug}}"
     create: true

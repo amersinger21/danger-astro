@@ -1,5 +1,6 @@
 :root {
   --main-text-color: hsl(1, 100%, 41%);
+  --main-text-color-brighter: hsl(1, 79%, 35%);
   --body-text-color: hsla(240, 67%, 35%, 0.967);
   --marquee-color: hsl(120, 87%, 36%);
   --background-color: hsla(52, 46%, 87%, 0.942);
