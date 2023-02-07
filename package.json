@@ -12,7 +12,8 @@
     "database": "node server.js"
   },
   "dependencies": {
-    "astro": "^2.0.6"
+    "astro": "^2.0.6",
+    "astro-netlify-cms": "^0.0.1"
   },
   "devDependencies": {
     "prettier-plugin-astro": "^0.8.0"
