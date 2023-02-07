@@ -196,3 +196,20 @@ const pressList = await Astro.glob("../content/press/*.md");
     white-space: break-space;
   }
 </style>
+
+<script>
+  declare global {
+    interface Window {
+      netlifyIdentity: any;
+    }
+  }
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", (user) => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
