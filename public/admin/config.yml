@@ -18,3 +18,51 @@ collections:
       - { label: "Release Year", name: "year", widget: "string" }
       - { label: "Slug", name: "slug", widget: "string" }
       - { label: "Item Number", name: "sortOrder", widget: "number" }
+  - name: "music videos"
+    label: "Music Videos"
+    folder: "src/content/music-videos"
+    slug: "{{sortOrder}}-{{slug}}"
+    create: true
+    delete: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Link", name: "link", widget: "string" }
+      - { label: "Release Year", name: "year", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Item Number", name: "sortOrder", widget: "number" }  
+      - name: "music"
+    label: "film"
+    folder: "src/content/film"
+    slug: "{{sortOrder}}-{{slug}}"
+    create: true
+    delete: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Link", name: "link", widget: "string" }
+      - { label: "Release Year", name: "year", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Item Number", name: "sortOrder", widget: "number" }  
+  - name: "press"
+    label: "Press"
+    folder: "src/content/press"
+    slug: "{{sortOrder}}-{{slug}}"
+    create: true
+    delete: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Link", name: "link", widget: "string" }
+      - { label: "Release Year", name: "year", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Item Number", name: "sortOrder", widget: "number" }
+  - name: "writing"
+    label: "Writing"
+    folder: "src/content/writing"
+    slug: "{{sortOrder}}-{{slug}}"
+    create: true
+    delete: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Link", name: "link", widget: "string" }
+      - { label: "Release Year", name: "year", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Item Number", name: "sortOrder", widget: "number" }    
