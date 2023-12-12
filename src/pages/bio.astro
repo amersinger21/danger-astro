@@ -1,0 +1,25 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import construction from "../images/under-construction.jpg";
+---
+
+<MainLayout title="MDL - Bio" pageName="Bio" heroVisible={false}>
+
+<h3>Under Construction . . . </h3>
+
+<img src={construction} alt="beautiful construction worker wearing a hard hat in front of a desolate landscape">
+
+</MainLayout>
+
+<style>
+
+    img {
+        max-width: 500px;
+    }
+
+    h3 {
+        font-size: var(--font-size-400);
+    }
+
+
+</style>
