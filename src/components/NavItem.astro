@@ -6,10 +6,9 @@ export interface Props {
 
 const { endpoint, text } = Astro.props;
 ---
-
-<li class="nav-link">
-  <a href={endpoint} target="_blank" rel="nnoreferrer noopener">{text}</a>
-</li>
+<a href={endpoint} target="_blank" rel="nnoreferrer noopener">
+  <li class="nav-link">{text}</li>
+</a>
 
 <style>
   li {
