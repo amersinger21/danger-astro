@@ -105,6 +105,7 @@ import heart from "../images/heart4.gif";
 
 <script is:inline>
   const submitBtn = document.getElementById("submit-btn");
+  submitBtn.addEventListener("click", SendEmail);
 
   function SendEmail() {
     document.getElementById("email-form").action = "";
@@ -126,5 +127,5 @@ import heart from "../images/heart4.gif";
     }
   }
 
-  submitBtn.addEventListener("click", SendEmail);
+  
 </script>
