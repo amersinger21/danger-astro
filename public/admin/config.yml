@@ -76,7 +76,7 @@ collections:
       - { label: "Bio Section Title 1", name: "bioHeader1", widget: "string" }
       - { label: "Bio Section 1", name: "bioBody1", widget: "text" }
       - { label: "Bio Section Title 2", name: "bioHeader2", widget: "string" }
-      - { label: "Bio Section 2", name: "bioBody1", widget: "text" }
+      - { label: "Bio Section 2", name: "bioBody2", widget: "text" }
       - { label: "Bio Image 1", name: "bioImage1", widget: "image" }
       - { label: "Bio Image 2", name: "bioImage2", widget: "image" }
       - { label: "Bio Image 3", name: "bioImage3", widget: "image" }
