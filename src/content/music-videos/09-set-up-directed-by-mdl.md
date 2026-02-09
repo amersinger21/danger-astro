@@ -1,5 +1,5 @@
 ---
-title: SET UP (dir. MDL)
+title: Set Up (dir. MDL)
 link: https://youtu.be/7P5nIuBan7w
 year: "2023"
 slug: set-up
