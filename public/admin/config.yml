@@ -69,7 +69,7 @@ collections:
   - name: "bio"
     label: "Bio"
     folder: "src/content/bio"
-    slug: "{{}}"
+    slug: "bio-details"
     create: true
     delete: true
     fields:
