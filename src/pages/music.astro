@@ -11,7 +11,7 @@ const musicList = await Astro.glob("../content/music/*.md");
   <Marquee sectionName="Music" />
   <article class="content-section">
     <div class="section-image">
-      <img src={cdGIF} alt="GIF of a CD spinning" />
+      <img src={cdGIF.src} alt="GIF of a CD spinning" />
     </div>
     <ul class="content-list">
       {

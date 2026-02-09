@@ -22,7 +22,7 @@ const pressList = await Astro.glob("../content/press/*.md");
   <Marquee sectionName="Music" />
   <article class="content-section">
     <div class="section-image">
-      <img src={cdGIF} alt="GIF of a CD spinning" />
+      <img src={cdGIF.src} alt="GIF of a CD spinning" />
     </div>
     <ul class="content-list">
       {
@@ -48,7 +48,7 @@ const pressList = await Astro.glob("../content/press/*.md");
   <article class="content-section">
     <div class="section-image">
       <img
-        src={camera}
+        src={camera.src}
         alt="GIF of a movie camera switching between pointing at you and pointing away to the left"
       />
     </div>
@@ -75,7 +75,7 @@ const pressList = await Astro.glob("../content/press/*.md");
   <Marquee sectionName="Film" />
   <article class="content-section">
     <div class="section-image">
-      <img src={clapper} alt="GIF of a film clapper clapping" />
+      <img src={clapper.src} alt="GIF of a film clapper clapping" />
     </div>
     <ul class="content-list">
       {
@@ -100,7 +100,7 @@ const pressList = await Astro.glob("../content/press/*.md");
   <Marquee sectionName="Writing" />
   <article class="content-section">
     <div class="section-image">
-      <img src={pen} alt="GIF of a fountiain pen writing scribbling" />
+      <img src={pen.src} alt="GIF of a fountiain pen writing scribbling" />
     </div>
     <ul class="content-list">
       {
@@ -126,7 +126,7 @@ const pressList = await Astro.glob("../content/press/*.md");
   <article class="content-section">
     <div class="section-image">
       <img
-        src={newspaper}
+        src={newspaper.src}
         alt="GIF of a flipping through pages of a magazine"
       />
     </div>
@@ -151,9 +151,11 @@ const pressList = await Astro.glob("../content/press/*.md");
     </strong>
   </article>
   <article id="thank-you">
-    <h2 class="thank-you-text">Thank you for visiting matthewdangerlippman.com</h2>
+    <h2 class="thank-you-text">
+      Thank you for visiting matthewdangerlippman.com
+    </h2>
     <img
-      src={guitarMan}
+      src={guitarMan.src}
       alt="Drawing of puppet in a blue sweater holding a guitar "
     />
   </article>

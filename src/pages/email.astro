@@ -7,9 +7,9 @@ import heart from "../images/heart4.gif";
 
 <MainLayout title="MDL - Contact Me" pageName="Contact Me" heroVisible={false}>
   <div class="contact-me-wrapper">
-    <img src={heart} alt="GIF of a red heart spinning" />
+    <img src={heart.src} alt="GIF of a red heart spinning" />
     <h2 class="contact-me">Contact Me</h2>
-    <img src={heart} alt="GIF of a red heart spinning" />
+    <img src={heart.src} alt="GIF of a red heart spinning" />
   </div>
   <div class="email-content-wrapper">
     <form id="email-form" method="get" action="" onsubmit="return false">
@@ -24,7 +24,7 @@ import heart from "../images/heart4.gif";
         required></textarea>
       <input name="submit-button" type="submit" id="submit-btn" />
     </form>
-    <img id="headshot" src={headShot} alt="MDL Headshot" />
+    <img id="headshot" src={headShot.src} alt="MDL Headshot" />
   </div>
 </MainLayout>
 
@@ -126,6 +126,4 @@ import heart from "../images/heart4.gif";
       window.location.reload();
     }
   }
-
-  
 </script>
