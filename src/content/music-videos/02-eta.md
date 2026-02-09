@@ -1,7 +1,7 @@
 ---
-link: "https://youtu.be/ltAJrkEvB6c"
-title: '"ETA" (directed by Jacob Smolinski)'
-slug: eta
+title: '"ETA" (dir. Jacob Smolinski)'
+link: https://youtu.be/ltAJrkEvB6c
 year: 2017
+slug: eta
 sortOrder: 2
 ---
