@@ -1,32 +1,37 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import construction from "../images/under-construction.jpg";
+import Marquee from "../components/Marquee.astro";
+import Low from "/public/media/once-you-get-low-final.jpg";
+
+import * as bioDetails from "../content/bio/01-bio-header.md";
 ---
 
 <MainLayout title="MDL - Bio" pageName="Bio" heroVisible={false}>
-
-<h3>Under Construction . . . </h3>
-
-<img src={construction} alt="beautiful construction worker wearing a hard hat in front of a desolate landscape">
-
+  <Marquee sectionName="BIO" />
+  <article class="content-section">
+    <h3>{bioDetails.frontmatter.title}</h3>
+    <p>body 1</p>
+    <img src={Low.src} alt="" />
+    <h3>header 2</h3>
+    <p>body 3</p>
+    <strong>
+      <a class="see-more" href="/">Go Back</a>
+    </strong>
+  </article>
 </MainLayout>
 
 <style>
+  img {
+    max-width: 500px;
+  }
 
+  h3 {
+    font-size: var(--font-size-400);
+  }
+
+  @media (max-width: 700px) {
     img {
-        max-width: 500px;
+      max-width: 300px;
     }
-
-    h3 {
-        font-size: var(--font-size-400);
-    }
-
-    @media (max-width: 700px){
-        img {
-            max-width: 250px;
-        }
-    }
-        
-
-
+  }
 </style>
