@@ -1,5 +1,5 @@
 ---
-title: AND (directed by Adrian Anderson)
+title: And (dir. Adrian Anderson)
 link: https://www.youtube.com/watch?v=VmYXUT4Rg14
 year: "2023"
 slug: and
