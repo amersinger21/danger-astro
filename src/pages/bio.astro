@@ -1,16 +1,22 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import Marquee from "../components/Marquee.astro";
-import Low from "/public/media/once-you-get-low-final.jpg";
+
+import * as bioDetails from "../content/bio/bio-details.md";
 ---
 
 <MainLayout title="MDL - Bio" pageName="Bio" heroVisible={false}>
   <Marquee sectionName="BIO" />
   <article class="content-section">
-    <p>body 1</p>
-    <img src={Low.src} alt="" />
-    <h3>header 2</h3>
-    <p>body 3</p>
+    <img src={bioDetails.frontmatter.bioImage1} alt="" />
+    <h3>{bioDetails.frontmatter.bioHeader1}</h3>
+    <p>{bioDetails.frontmatter.bioBody1}</p>
+    <img src={bioDetails.frontmatter.bioImage2} alt="" />
+    <h3>{bioDetails.frontmatter.bioHeader2}</h3>
+    <p>{bioDetails.frontmatter.bioBody2}</p>
+    <img src={bioDetails.frontmatter.bioImage3} alt="" />
+    <br />
+    <br />
     <strong>
       <a class="see-more" href="/">Go Back</a>
     </strong>
