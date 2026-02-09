@@ -74,3 +74,4 @@ collections:
     delete: true
     fields:
       - { label: "Body", name: "body", widget: "string" }
+      - { label: "Image1", name: "image1", widget: "image" }
