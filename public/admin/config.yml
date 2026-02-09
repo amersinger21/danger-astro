@@ -66,3 +66,11 @@ collections:
       - { label: "Release Year", name: "year", widget: "string" }
       - { label: "Slug", name: "slug", widget: "string" }
       - { label: "Item Number", name: "sortOrder", widget: "number" }
+  - name: "bio"
+    label: "Bio"
+    folder: "src/content/bio"
+    slug: "{{sortOrder}}-{{slug}}"
+    create: true
+    delete: true
+    fields:
+      - { label: "Body", name: "body", widget: "string" }
