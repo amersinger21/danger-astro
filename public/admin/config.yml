@@ -95,3 +95,13 @@ collections:
           name: "bioImageAlt3",
           widget: "string",
         }
+  - name: "pics"
+    label: "Site Images"
+    folder: "src/content/pics"
+    slug: "main-pics-details"
+    create: true
+    delete: true
+    fields:
+      - { label: "Site Background", name: "siteBg", widget: "image" }
+      - { label: "Main Header Image", name: "mainPic", widget: "image" }
+      - { label: "Contact Me Image", name: "contactPic", widget: "image" }
