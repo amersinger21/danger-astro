@@ -1,7 +1,7 @@
 ---
-link: "https://www.youtube.com/watch?v=DnsjDINQqnY"
-title: '"F*ckin'' Pink" (directed by MDL & James Werick)'
-slug: fuckin-pink
+title: "\"F*ckin' Pink\" (dir. MDL & James Werick)"
+link: https://www.youtube.com/watch?v=DnsjDINQqnY
 year: 2017
+slug: fuckin-pink
 sortOrder: 3
 ---
