@@ -2,14 +2,11 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import Marquee from "../components/Marquee.astro";
 import Low from "/public/media/once-you-get-low-final.jpg";
-
-import * as bioDetails from "../content/bio/01-bio-header.md";
 ---
 
 <MainLayout title="MDL - Bio" pageName="Bio" heroVisible={false}>
   <Marquee sectionName="BIO" />
   <article class="content-section">
-    <h3>{bioDetails.frontmatter.title}</h3>
     <p>body 1</p>
     <img src={Low.src} alt="" />
     <h3>header 2</h3>
