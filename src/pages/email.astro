@@ -1,8 +1,8 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 
-import headShot from "../images/MDLsmall.jpeg";
 import heart from "../images/heart4.gif";
+import * as keyImages from "../content/pics/main-pics-details.md";
 ---
 
 <MainLayout title="MDL - Contact Me" pageName="Contact Me" heroVisible={false}>
@@ -24,7 +24,11 @@ import heart from "../images/heart4.gif";
         required></textarea>
       <input name="submit-button" type="submit" id="submit-btn" />
     </form>
-    <img id="headshot" src={headShot.src} alt="MDL Headshot" />
+    <img
+      id="headshot"
+      src={keyImages.frontmatter.contactPic}
+      alt="MDL Headshot"
+    />
   </div>
 </MainLayout>
 

@@ -4,8 +4,8 @@ import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import Nav from "../components/Nav.astro";
 import heart from "../images/heart4.gif";
-import headShot from "../images/MDLsmall.jpeg";
 import "../styles/global.css";
+import * as keyImages from "../content/pics/main-pics-details.md";
 
 export interface Props {
   title?: string;
@@ -57,7 +57,7 @@ const {
                 <h2 id="official"> {pageName} </h2>
                 <div class="hero-images-wrapper">
                   <img src={heart.src} alt="GIF of a red heart spinning" />
-                  <img src={headShot.src} alt="MDL Headshot" />
+                  <img src={keyImages.frontmatter.mainPic} alt="MDL Headshot" />
                   <img src={heart.src} alt="GIF of a red heart spinning" />
                 </div>
               </article>
