@@ -19,8 +19,8 @@ bioBody2: "He has acted in several films, among them his own short Ain't No Cure
   (Antonio Pinto). He recently appeared on SubwayTakes."
 bioImage1: /media/lily-nord-4-mdl-10.jpg
 bioImageAlt1: glasses
-bioImage2: /media/aint-no-cure-poster-letterboxd.jpg
+bioImage2: /media/a0764186503_16.jpg
 bioImageAlt2: america
-bioImage3: /media/a0764186503_16.jpg
+bioImage3: /media/aint-no-cure-poster-letterboxd.jpg
 bioImageAlt3: nirvana
 ---
