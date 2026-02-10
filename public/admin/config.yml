@@ -73,6 +73,7 @@ collections:
     create: true
     delete: true
     fields:
+      - { label: "Site Bio", name: "bio", widget: "string" }
       - { label: "Bio Section Title 1", name: "bioHeader1", widget: "string" }
       - { label: "Bio Section 1", name: "bioBody1", widget: "text" }
       - { label: "Bio Section Title 2", name: "bioHeader2", widget: "string" }
