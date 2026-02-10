@@ -1,4 +1,5 @@
 ---
+bio: Site Bio Controls
 bioHeader1: test title ONE
 bioBody1: " Lorem ipsum dolor sit amet."
 bioHeader2: test title2
