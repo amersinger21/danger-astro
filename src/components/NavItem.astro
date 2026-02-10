@@ -2,11 +2,13 @@
 export interface Props {
   endpoint: string;
   text: string;
+  target: string;
 }
 
-const { endpoint, text } = Astro.props;
+const { endpoint, text, target } = Astro.props;
 ---
-<a href={endpoint} target="_blank" rel="nnoreferrer noopener">
+
+<a href={endpoint} target={target} rel="nnoreferrer noopener">
   <li class="nav-link">{text}</li>
 </a>
 

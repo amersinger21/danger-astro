@@ -4,19 +4,24 @@ import NavItem from "./NavItem.astro";
 const navList = [
   {
     destination:"https://matthewdangerlippman.bandcamp.com/music",
-    title: "Bandcamp"
+    title: "Bandcamp",
+    target:"_blank"
   },
   {
     destination:"https://www.instagram.com/matthewdangerlippman/",
-    title: "Instagram"
+    title: "Instagram",
+    target:"_blank"
+
   },
   {
     destination:"/bio",
-    title: "Bio"
+    title: "Bio",
+    target:""
   },
   {
     destination:"/email",
-    title: "Email"
+    title: "Email",
+    target:""
   },
 
 ]
@@ -25,7 +30,7 @@ const navList = [
 <nav>
   <ul class="main-nav">
     {navList.map(item => (
-      <NavItem endpoint={item.destination} text={item.title}/>
+      <NavItem endpoint={item.destination} text={item.title} target={item.target}/>
     ))} 
   </ul>
   <button
