@@ -70,8 +70,8 @@ collections:
     label: "Bio"
     folder: "src/content/bio"
     slug: "bio-details"
-    create: true
-    delete: true
+    create: false
+    delete: false
     fields:
       - { label: "Site Bio", name: "bio", widget: "string" }
       - { label: "Bio Section Title 1", name: "bioHeader1", widget: "string" }
@@ -100,8 +100,8 @@ collections:
     label: "Site Images"
     folder: "src/content/pics"
     slug: "main-pics-details"
-    create: true
-    delete: true
+    create: false
+    delete: false
     fields:
       - { label: "Site Images", name: "siteImages", widget: "string" }
       # - { label: "Site Background", name: "siteBg", widget: "image" }
