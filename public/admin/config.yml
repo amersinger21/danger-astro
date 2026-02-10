@@ -102,6 +102,7 @@ collections:
     create: true
     delete: true
     fields:
+      - { label: "Site Images", name: "siteImages", widget: "string" }
       # - { label: "Site Background", name: "siteBg", widget: "image" }
       - { label: "Main Header Image", name: "mainPic", widget: "image" }
       - { label: "Contact Me Image", name: "contactPic", widget: "image" }
