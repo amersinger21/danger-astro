@@ -1,6 +1,6 @@
 ---
 siteBg: /media/smokeybackground.jpg
 siteImages: Site Image Control
-mainPic: /media/mdlsmall.jpeg
+mainPic: /media/lilynord-matthew-danger-lippman.jpg
 contactPic: /media/mdlsmall.jpeg
 ---
