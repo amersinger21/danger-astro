@@ -18,7 +18,8 @@ bioBody1: >-
 bioHeader2: Film
 bioBody2: >-
   He has acted in several films, among them his own short Ain't No Cure For
-  Love: America, which screened at Whammy! and Nitehawk.
+  Love: America, which screened at Whammy! and Nitehawk. He has wrapped
+  production on FELLAS, a comedic pilot.
 
 
   He stars in the short Portland Is the New Portland (2024)—for which he won Best Actor at the Sherman Oaks Film Festival—as well as The Deliveryboy (Michael Bernieri), which screened at New/Next and FilmFort (2026).
