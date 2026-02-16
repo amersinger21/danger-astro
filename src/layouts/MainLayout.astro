@@ -57,7 +57,7 @@ const {
                 <h2 id="official"> {pageName} </h2>
                 <div class="hero-images-wrapper">
                   <img src={heart.src} alt="GIF of a red heart spinning" />
-                  <img src={keyImages.frontmatter.mainPic} alt="MDL Headshot" />
+                  <img src={keyImages.frontmatter.mainPic} id="heroImage" alt="MDL Headshot" />
                   <img src={heart.src} alt="GIF of a red heart spinning" />
                 </div>
               </article>
@@ -90,6 +90,10 @@ const {
         padding: var(--padding-sml);
         column-gap: 0.125em;
         margin: 0.5em;
+      }
+
+      #heroImage {
+        max-width: 750px;
       }
 
       h2,
